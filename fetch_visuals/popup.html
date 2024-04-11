@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Furniture</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body style="user-select: none;">
+<div class="flex-column container">
+    <h2 style="color: white;">Importador de visuais</h2>
+
+    <div class="flex-row2">
+        <span>Visualizar Visuais não importados</span>
+        <label class="switch" id="switch_opt">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div id="visuals_grid" class="grid hidden">
+        <div class="grid-item">
+        </div>
+        <div class="grid-item">
+        </div>
+        <div class="grid-item">
+        </div>
+        <div class="grid-item">
+        </div>
+    </div>
+
+    <div id="mod-add" style="width: 100%;">
+        <div class="methods">
+            <label for="method-class">
+                <input type="radio" name="method" id="method-class" checked> Por id
+            </label>
+            <input type="text" id="input-class" style="display: block;">
+        </div>
+
+        <div class="hotel flex-row">
+            <label for="select-hotel" id="label-hotel" class="flex-row">
+                <span>Hotel</span>
+                <select name="select-hotel" id="hotel" class="form-select"></select>
+            </label>
+        </div>
+
+        <label for="select-order" id="label-order" class="flex-row"
+               style="width: 100%; height: 30%; text-align: center; gap: 10px; margin-top: 10px;">
+            <span>Tipo de busca</span>
+            <select name="select-order" id="order" class="form-select" style="width: 50%;">
+                <option value="asc" selected>Checar o começo</option>
+                <option value="desc">Checar o final</option>
+                <option value="commom">Em comum</option>
+            </select>
+        </label>
+
+        <div class="div-control">
+            <div id="div-fetch">
+                <button class="btn btn-primary" type="button" id="fetch">
+                    <span role="status" id="button-message">Fetch</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="./assets/scripts/popup.js"></script>
+<script type="module" src="./assets/scripts/loadHotels.js"></script>
+</body>
+
+</html>
